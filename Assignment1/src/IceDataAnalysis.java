@@ -58,13 +58,13 @@ public class IceDataAnalysis {
     /**
      * Reads ice sheet data from a text file and converts it into a 3D array.
      *
-     * @param textPath The path to the text file containing the ice sheet data.
+     * @param textFilePath The path to the text file containing the ice sheet data.
      * @return A 3D array representing the ice sheets data, or null if an error occurs.
      */
-    public static int[][][] textDataToArray(String textPath){
+    public static int[][][] textDataToArray(String textFilePath){
         try {
             // Create a new File object using the provided path.
-            File textFile = new File(textPath);
+            File textFile = new File(textFilePath);
             // Create a Scanner object to read the file.
             Scanner reader = new Scanner(textFile);
 
@@ -166,7 +166,10 @@ public class IceDataAnalysis {
                 // Store the sheet number with the most weak spots.
                 maximumTotalWeakSpotsSheetNumber = iceSheet;
             }
+            // Store the weak spots count for the current sheet in the array.
             maximumTotalWeakSpotsOnSheetArray[iceSheet] = currentSheetTotalWeakSpots;
+
+            // Reset the weak spots counter for the next sheet.
             currentSheetTotalWeakSpots = 0;
         }
         //  System.out.println(Arrays.deepToString(weakSpotsLocationsArray));
