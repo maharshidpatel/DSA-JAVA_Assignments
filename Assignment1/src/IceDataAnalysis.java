@@ -20,6 +20,9 @@ public class IceDataAnalysis {
      */
     public static void main(String[] args) {
 
+        long startms;
+        startms = System.currentTimeMillis();
+
         // Convert the text file data into a 3D array of ice sheets using textDataToArray function
         int[][][] iceDataArray = textDataToArray("./ICESHEETS_F24.TXT");
 
@@ -53,6 +56,9 @@ public class IceDataAnalysis {
         System.out.printf("The total number of weak spots that have cracked = %d\n", crackResult.length);
         // Print the fraction of weak spots that turned into cracks
         System.out.printf("The fraction of weak spots that are also cracks is %.3f", (double)crackResult.length/weakSpotsResult[0][0][0]);
+
+        long endms = System.currentTimeMillis();
+        System.out.printf("\n\nTime = %d ms\n", endms - startms);
     }
 
     /**

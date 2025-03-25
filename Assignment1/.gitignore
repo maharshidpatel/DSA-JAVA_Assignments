@@ -29,7 +29,6 @@ bin/
 .DS_Store
 
 # Maharshi Patel's Github ignores
-/out
 /.idea
 Assignment1.iml
 Assignment1_F24.docx
