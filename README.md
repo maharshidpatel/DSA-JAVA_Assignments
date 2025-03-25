@@ -1,2 +1,2 @@
-# Mohawk_DSA-JAVA_Assignments
+# DSA-JAVA_Assignments
  
